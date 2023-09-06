@@ -37,5 +37,5 @@ Expectations:
   
 **GUIDELINES**
 - Time Limit -  3 Work Days
-- Pick the tech stack for which you got training
+- Pick the tech stack on which you have been trained during the onboarding exercise
 - Create branch under this by your name and make commit only in that branch
