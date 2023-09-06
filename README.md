@@ -12,7 +12,7 @@ ParaBank is a demo site used for simulating a realistic online banking website (
 9. Loan Request
 10. Update contact info
  
-Write Web automation for testing the **first 5** features of this application.
+Write Web automation for testing the **last 5** features of this application.
 Expectations:
 - Some MUST have features in your automation solution -
 - Test Case documentation (Including +ve and -ve scenarios)
