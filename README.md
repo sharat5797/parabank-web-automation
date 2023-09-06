@@ -1,5 +1,6 @@
 # parabank_last5
 Overview
+-
 ParaBank is a demo site used for simulating a realistic online banking website ([link](https://parabank.parasoft.com/parabank/index.htm)). It has the following features : 
 1. Register
 2. Login
@@ -12,25 +13,29 @@ ParaBank is a demo site used for simulating a realistic online banking website (
 9. Loan Request
 10. Update contact info
  
-Write Web automation for testing the **last 5** features of this application.
+Write **Web automation** tests for the **last 5** features of this application.
+
 Expectations:
-- Some MUST have features in your automation solution -
+-
+
+**MUST HAVE**
 - Test Case documentation (Including +ve and -ve scenarios)
 - Not just automation code, proper automation framework
 - Automation report
 - Grouping of tests
 - Use of soft assertion
 - Command line execution
-- Regular commits
+- Regular Periodic commits (There should be atleast 5 commits for 5 individual features)
 
-Some GOOD TO HAVE have features in your automation solution -
+**GOOD TO HAVE**
 - Use of SOLID principles
 - Use of Object Oriented Programming techniques wherever applicable
 - Use of coding best practices
 - Parallel execution of tests
 - Good visualization of test results
-- Framework should be robust and scalable
+- Robust and scalable framework
   
-Guidelines:
-- Time - 4 days
+**GUIDELINES**
+- Time Limit -  3 Work Days
 - Pick the tech stack for which you got training
+- Create branch under this by your name and make commit only in that branch
