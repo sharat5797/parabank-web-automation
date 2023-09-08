@@ -21,6 +21,10 @@ dependencies {
 
     // This dependency is used by the application.
     implementation 'com.google.guava:guava:32.1.1-jre'
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.10.0'
+    implementation 'org.apache.logging.log4j:log4j-api:2.20.0'
+    implementation 'org.apache.logging.log4j:log4j-core:2.20.0'
+    implementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '5.4.0'
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
