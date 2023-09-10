@@ -11,5 +11,6 @@ public class ManageAccountsPageTest {
         ManageAccountsPage manageAccountsPage = new ManageAccountsPage();
         WebDriver driver = manageAccountsPage.getManageAccountsPage();
         Assert.assertEquals(driver.getTitle(), "OpenMRS Electronic Medical Record");
+        driver.quit();
     }
 }

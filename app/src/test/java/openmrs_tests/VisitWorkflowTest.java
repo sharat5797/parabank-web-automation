@@ -13,14 +13,16 @@ public class VisitWorkflowTest {
         WebDriver driver = findPatientRecordPage.getFindPatientRecordPage();
         findPatientRecordPage.selectFirstPatient();
         Assert.assertEquals(driver.getTitle(), "OpenMRS Electronic Medical Record");
+        driver.quit();
     }
 
     @Test
-    public void testeditRegistrationDetails() {
+    public void testEditRegistrationDetails() {
         PatientDetailsPage patientDetailsPage = new PatientDetailsPage();
         WebDriver driver = patientDetailsPage.getPatientDetailsPage();
         patientDetailsPage.editRegistrationDetails();
         Assert.assertEquals(driver.getTitle(),"OpenMRS Electronic Medical Record");
+        driver.quit();
     }
 
 }

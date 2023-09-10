@@ -9,5 +9,6 @@ public class SystemAdministrationPageTest {
     public void testSystemAdministration() throws InterruptedException {
         SystemAdministrationPage systemAdministrationPage = new SystemAdministrationPage();
         WebDriver driver =  systemAdministrationPage.getSystemAdministrationPage();
+        driver.quit();
     }
 }
