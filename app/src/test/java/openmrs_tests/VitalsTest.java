@@ -35,8 +35,7 @@ public class VitalsTest {
 
     @Test(groups = {"full"})
     public void testCaptureVitals() throws InterruptedException {
-        captureVitalsPage.selectTempUser();
-        captureVitalsPage.startVisit();
+        captureVitalsPage.selectFirstPatient();
         captureVitalsPage.confirmPatient();
         captureVitalsPage.fillVitals();
         captureVitalsPage.confirmVitalDetails();
@@ -66,7 +65,6 @@ public class VitalsTest {
 //        CaptureVitalsPage captureVitalsPage = new CaptureVitalsPage();
 //        WebDriver driver = captureVitalsPage.getCaptureVitalsPage();
 //        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        captureVitalsPage.selectTempUser();
         captureVitalsPage.selectFirstPatient();
         captureVitalsPage.noFindOtherPatient();
         Assert.assertEquals(driver.findElement(By.xpath("//*[@id=\"content\"]/h2")).getText(), "Capture Vitals for Patient");
@@ -77,7 +75,6 @@ public class VitalsTest {
 //        CaptureVitalsPage captureVitalsPage = new CaptureVitalsPage();
 //        WebDriver driver = captureVitalsPage.getCaptureVitalsPage();
 //        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        captureVitalsPage.selectTempUser();
         captureVitalsPage.selectFirstPatient();
         captureVitalsPage.confirmPatient();
         captureVitalsPage.saveForm();
@@ -89,7 +86,6 @@ public class VitalsTest {
 //        CaptureVitalsPage captureVitalsPage = new CaptureVitalsPage();
 //        WebDriver driver = captureVitalsPage.getCaptureVitalsPage();
 //        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        captureVitalsPage.selectTempUser();
         captureVitalsPage.selectFirstPatient();
         captureVitalsPage.confirmPatient();
         captureVitalsPage.exitForm();
@@ -114,7 +110,6 @@ public class VitalsTest {
 //        CaptureVitalsPage captureVitalsPage = new CaptureVitalsPage();
 //        WebDriver driver = captureVitalsPage.getCaptureVitalsPage();
 //        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        captureVitalsPage.selectTempUser();
         captureVitalsPage.selectFirstPatient();
         captureVitalsPage.confirmPatient();
         captureVitalsPage.fillVitals();

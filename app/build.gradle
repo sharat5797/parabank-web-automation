@@ -51,3 +51,76 @@ test {
         suites 'src/test/resources/testng.xml'
     }
 }
+
+task vitalsTest(type: Test) {
+    useTestNG() {
+        suites 'src/test/resources/vitalstest.xml'
+    }
+}
+
+task manageAccountsTest(type: Test) {
+    useTestNG() {
+        suites 'src/test/resources/manageaccountstest.xml'
+    }
+}
+
+task loginTest(type: Test) {
+    useTestNG() {
+        suites 'src/test/resources/logintest.xml'
+    }
+}
+
+task manageAccountsPageTest(type: Test) {
+    useTestNG() {
+        suites 'src/test/resources/manageaccountspagetest.xml'
+    }
+}
+
+task systemAdminPageTest(type: Test) {
+    useTestNG() {
+        suites 'src/test/resources/systemadminpagetest.xml'
+    }
+}
+
+task visitWorkflowTest(type: Test) {
+    useTestNG() {
+        suites 'src/test/resources/visitworkflowtest.xml'
+    }
+}
+
+// Define a custom task to run the 'vitalsTest' task from the command line
+task runVitalsTest(type: Test) {
+    dependsOn 'vitalsTest'
+    description = 'Run the Vitals test suite using TestNG'
+    group = 'verification'
+}
+
+task runManageAccountsTest(type: Test) {
+    dependsOn 'manageAccountsTest'
+    description = 'Run the Manage Accounts test suite using TestNG'
+    group = 'verification'
+}
+
+task runLoginTest(type: Test) {
+    dependsOn 'loginTest'
+    description = 'Run the Login test suite using TestNG'
+    group = 'verification'
+}
+
+task runManageAccountsPageTest(type: Test) {
+    dependsOn 'manageAccountsPageTest'
+    description = 'Run the Manage Accounts Page test suite using TestNG'
+    group = 'verification'
+}
+
+task runSystemAdminPageTest(type: Test) {
+    dependsOn 'systemAdminPageTest'
+    description = 'Run the System Admin Page test suite using TestNG'
+    group = 'verification'
+}
+
+task runVisitWorkflowTest(type: Test) {
+    dependsOn 'visitWorkflowTest'
+    description = 'Run the Visit Workflow test suite using TestNG'
+    group = 'verification'
+}

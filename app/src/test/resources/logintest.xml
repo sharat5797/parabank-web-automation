@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="AllTestsSuite" verbose="1">
+    <test name="All">
+        <groups>
+            <run>
+                <include name="full"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="openmrs_tests.LoginTest"/>
+        </classes>
+    </test>
+</suite>

@@ -28,11 +28,12 @@ public class CaptureVitalsPage {
     }
 
     public void selectFirstPatient() {
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.findElement(By.xpath("//*[@id=\"patient-search-results-table\"]/tbody/tr[1]")).click();
     }
 
     public void confirmPatient() {
-        driver.findElement(By.id("coreapps-vitals-confirm")).click();
+        driver.findElement(By.xpath("//*[@id=\"coreapps-vitals-confirm\"]")).click();
     }
 
     public void fillVitals() {
