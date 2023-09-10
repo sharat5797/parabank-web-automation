@@ -1,18 +1,27 @@
 package pages;
 
+import drivers.DriverCreator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import java.awt.*;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
 public class CaptureVitalsPage {
-    private WebDriver driver=null;
+    private WebDriver driver= null;
+
+//    public CaptureVitalsPage() {
+//        DriverCreator driverCreator = new DriverCreator();
+//        driver = driverCreator.create("chrome");
+//    }
     public WebDriver getCaptureVitalsPage(){
-        HomePage homePage = new HomePage();
-        driver = homePage.getHomePage();
-        homePage.gotoCaptureVitalsPage();
+        if(driver == null){
+            HomePage homePage = new HomePage();
+            driver = homePage.getHomePage();
+            homePage.gotoCaptureVitalsPage();
+        }
         return driver;
     }
 
@@ -76,5 +85,10 @@ public class CaptureVitalsPage {
         driver.findElement(By.xpath("//*[@id=\"confirmationQuestion\"]/p[1]/button")).click();
     }
 
+    public void selectTempUser(){
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.findElement(By.id("patient-search")).sendKeys("100N15");
+        driver.findElement(By.xpath("//*[@id=\"patient-search-results-table\"]/tbody/tr")).click();
+    }
 
 }
