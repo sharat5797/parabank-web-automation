@@ -9,6 +9,8 @@
         <classes>
             <class name="openmrs_tests.ManageAccountsPageTest"/>
             <class name="openmrs_tests.VitalsTest"/>
+            <class name="openmrs_tests.MyAccountPageTest"/>
+
         </classes>
     </test>
 </suite>

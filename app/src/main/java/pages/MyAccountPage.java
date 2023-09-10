@@ -1,5 +1,6 @@
 package pages;
 
+import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -16,5 +17,21 @@ public class MyAccountPage {
         WebElement subElement = driver.findElement(By.xpath("//*[@id=\"user-account-menu\"]/li/a"));
         subElement.click();
         return driver;
+    }
+
+    public void changePassword(){
+        driver.findElement(By.xpath("//*[@id=\"tasks\"]/a[1]")).click();
+    }
+
+    public void fillPasswords(){
+        Faker faker = new Faker();
+        String password = "Tempuser" + faker.number().numberBetween(10, 99);
+        driver.findElement(By.id("oldPassword-field")).sendKeys("Admin123");
+        driver.findElement(By.id("newPassword-field")).sendKeys(password);
+        driver.findElement(By.id("confirmPassword-field")).sendKeys(password);
+    }
+
+    public void savePassword(){
+        driver.findElement(By.id("save-button")).click();
     }
 }
