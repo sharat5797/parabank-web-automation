@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import pages.SystemAdministrationPage;
 
 public class SystemAdministrationPageTest {
-    @Test
+    @Test (groups = {"full"})
     public void testSystemAdministration() throws InterruptedException {
         SystemAdministrationPage systemAdministrationPage = new SystemAdministrationPage();
         WebDriver driver =  systemAdministrationPage.getSystemAdministrationPage();

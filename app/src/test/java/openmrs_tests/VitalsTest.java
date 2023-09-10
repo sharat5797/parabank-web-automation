@@ -11,7 +11,9 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pages.CaptureVitalsPage;
+import pages.FindPatientRecordPage;
 import pages.HomePage;
+import pages.PatientDetailsPage;
 
 import javax.annotation.concurrent.ThreadSafe;
 import java.time.Duration;
@@ -19,16 +21,22 @@ import java.time.Duration;
 public class VitalsTest {
     private WebDriver driver;
     private CaptureVitalsPage captureVitalsPage;
-    @BeforeTest (groups = { "full" })
-    public void setDriver(){
+
+    //    private FindPatientRecordPage findPatientRecordPage;
+//    private PatientDetailsPage patientDetailsPage;
+    @BeforeTest(groups = {"full"})
+    public void setDriver() {
         captureVitalsPage = new CaptureVitalsPage();
         driver = captureVitalsPage.getCaptureVitalsPage();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+//        patientDetailsPage = new PatientDetailsPage();
+//        findPatientRecordPage =new FindPatientRecordPage();
     }
 
-    @Test (groups = { "full" })
+    @Test(groups = {"full"})
     public void testCaptureVitals() throws InterruptedException {
         captureVitalsPage.selectTempUser();
+        captureVitalsPage.startVisit();
         captureVitalsPage.confirmPatient();
         captureVitalsPage.fillVitals();
         captureVitalsPage.confirmVitalDetails();
@@ -53,36 +61,39 @@ public class VitalsTest {
 //    }
 
 
-    @Test (groups = { "full" })
+    @Test(groups = {"full"})
     public void testNoFindOtherPatient() {
 //        CaptureVitalsPage captureVitalsPage = new CaptureVitalsPage();
 //        WebDriver driver = captureVitalsPage.getCaptureVitalsPage();
 //        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         captureVitalsPage.selectTempUser();
+        captureVitalsPage.selectFirstPatient();
         captureVitalsPage.noFindOtherPatient();
-        Assert.assertEquals(driver.findElement(By.xpath("//*[@id=\"content\"]/h2")).getText(),"Capture Vitals for Patient");
+        Assert.assertEquals(driver.findElement(By.xpath("//*[@id=\"content\"]/h2")).getText(), "Capture Vitals for Patient");
     }
 
-    @Test (groups = { "full" })
+    @Test(groups = {"full"})
     public void testSaveForm() {
 //        CaptureVitalsPage captureVitalsPage = new CaptureVitalsPage();
 //        WebDriver driver = captureVitalsPage.getCaptureVitalsPage();
 //        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         captureVitalsPage.selectTempUser();
+        captureVitalsPage.selectFirstPatient();
         captureVitalsPage.confirmPatient();
         captureVitalsPage.saveForm();
-        Assert.assertEquals(driver.findElement(By.xpath("//*[@id=\"confirmationQuestion\"]/h3")).getText(),"Confirm submission?");
+        Assert.assertEquals(driver.findElement(By.xpath("//*[@id=\"confirmationQuestion\"]/h3")).getText(), "Confirm submission?");
     }
 
-    @Test (groups = { "full" })
+    @Test(groups = {"full"})
     public void testExitForm() {
 //        CaptureVitalsPage captureVitalsPage = new CaptureVitalsPage();
 //        WebDriver driver = captureVitalsPage.getCaptureVitalsPage();
 //        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         captureVitalsPage.selectTempUser();
+        captureVitalsPage.selectFirstPatient();
         captureVitalsPage.confirmPatient();
         captureVitalsPage.exitForm();
-        Assert.assertEquals(driver.findElement(By.xpath("//*[@id=\"content\"]/h2")).getText(),"Capture Vitals for Patient");
+        Assert.assertEquals(driver.findElement(By.xpath("//*[@id=\"content\"]/h2")).getText(), "Capture Vitals for Patient");
     }
 
 //    @Test
@@ -98,12 +109,13 @@ public class VitalsTest {
 //        Assert.assertEquals(driver.findElement(By.xpath("//*[@id=\"formBreadcrumb\"]/li[1]/ul/li[1]/span")).getText(),"Height (cm)");
 //    }
 
-    @Test (groups = { "full" })
+    @Test(groups = {"full"})
     public void testConfirmSubmissionSave() {
 //        CaptureVitalsPage captureVitalsPage = new CaptureVitalsPage();
 //        WebDriver driver = captureVitalsPage.getCaptureVitalsPage();
 //        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         captureVitalsPage.selectTempUser();
+        captureVitalsPage.selectFirstPatient();
         captureVitalsPage.confirmPatient();
         captureVitalsPage.fillVitals();
         captureVitalsPage.saveForm();
@@ -111,8 +123,8 @@ public class VitalsTest {
         Assert.assertTrue(driver.findElement(By.cssSelector("body > div.toast-container.toast-position-top-right")).getText().contains("Entered Vitals for"));
     }
 
-    @AfterTest (groups = { "full" })
-    public void quitDriver(){
+    @AfterTest(groups = {"full"})
+    public void quitDriver() {
         driver.quit();
     }
 }

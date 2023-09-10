@@ -8,7 +8,7 @@ import pages.LoginPage;
 import java.util.concurrent.TimeUnit;
 
 public class LoginTest {
-    @Test
+    @Test (groups = {"full"})
     public void testLogin() throws InterruptedException {
         LoginPage loginPage = new LoginPage();
         WebDriver driver = loginPage.getLoginPage();

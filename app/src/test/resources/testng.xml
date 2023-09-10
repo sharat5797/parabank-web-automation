@@ -10,7 +10,9 @@
             <class name="openmrs_tests.ManageAccountsPageTest"/>
             <class name="openmrs_tests.VitalsTest"/>
             <class name="openmrs_tests.MyAccountPageTest"/>
-
+            <class name="openmrs_tests.LoginTest"/>
+            <class name="openmrs_tests.SystemAdministrationPageTest"/>
+            <class name="openmrs_tests.VisitWorkflowTest"/>
         </classes>
     </test>
 </suite>
