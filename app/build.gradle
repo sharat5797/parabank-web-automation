@@ -88,6 +88,12 @@ task visitWorkflowTest(type: Test) {
     }
 }
 
+task editRegistrationDetailsTest(type: Test) {
+    useTestNG() {
+        suites 'src/test/resources/editregistrationdetailstest.xml'
+    }
+}
+
 // Define a custom task to run the 'vitalsTest' task from the command line
 task runVitalsTest(type: Test) {
     dependsOn 'vitalsTest'
@@ -122,5 +128,11 @@ task runSystemAdminPageTest(type: Test) {
 task runVisitWorkflowTest(type: Test) {
     dependsOn 'visitWorkflowTest'
     description = 'Run the Visit Workflow test suite using TestNG'
+    group = 'verification'
+}
+
+task runEditRegistrationDetailsTest(type: Test) {
+    dependsOn 'editRegistrationDetailsTest'
+    description = 'Run the Edit Registration Details test suite using TestNG'
     group = 'verification'
 }
